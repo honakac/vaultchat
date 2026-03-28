@@ -54,7 +54,7 @@ func main() {
 
 			case "decrypt":
 				if len(words) < 3 {
-					fmt.Println("usage: decrypt id message")
+					fmt.Println("usage: decrypt senderId message")
 					break
 				}
 				commands.Decrypt(key, words[1], strings.Join(words[2:], " "))
