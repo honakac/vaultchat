@@ -53,11 +53,11 @@ func main() {
 				commands.Encrypt(key, words[1], strings.Join(words[2:], " "))
 
 			case "decrypt":
-				if len(words) < 2 {
-					fmt.Println("usage: decrypt message")
+				if len(words) < 3 {
+					fmt.Println("usage: decrypt id message")
 					break
 				}
-				commands.Decrypt(key, keyId, strings.Join(words[1:], " "))
+				commands.Decrypt(key, words[1], strings.Join(words[2:], " "))
 
 			case "generate":
 				if newKey := commands.Generate(); newKey != nil {
