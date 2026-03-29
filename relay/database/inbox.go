@@ -43,8 +43,11 @@ func (db *Database) GetInboxMessages(key *common.Keys, c fiber.Ctx, receiverAddr
 		log.Errorf("Failed to get inbox messages: %v", err)
 		return err
 	}
+	responseMessages := GetMessagesResponse{
+		Messages: messages,
+	}
 
-	jsonMessages, err := json.Marshal(messages)
+	jsonMessages, err := json.Marshal(responseMessages)
 	if err != nil {
 		log.Errorf("Failed to marshal messages: %v", err)
 		return err

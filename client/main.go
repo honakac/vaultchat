@@ -67,6 +67,20 @@ func main() {
 					fmt.Println("Your new id:", keyId)
 				}
 
+			case "send":
+				if len(words) < 4 {
+					fmt.Println("usage: send relayUrl recipientId message")
+					break
+				}
+				commands.Send(key, keyId, words[1], words[2], strings.Join(words[3:], " "))
+			
+			case "messages":
+				if len(words) != 2 {
+					fmt.Println("usage: messages relayUrl")
+					break
+				}
+				commands.Messages(key, keyId, words[1])
+
 			case "help":
 				commands.Help()
 			case "exit", "quit":
