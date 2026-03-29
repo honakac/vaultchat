@@ -27,12 +27,12 @@ func main() {
 		fmt.Println("In case of creating new keys, there is a command 'generate'")
 
 		key = common.GenerateKeys()
-		keys.WriteKeys(key)
+		keys.WriteKeys("user.keys", key)
 
 		fmt.Println("Successfully generated!")
 		fmt.Println()
 	} else {
-		key = keys.ReadKeys()
+		key = keys.ReadKeys("user.keys")
 	}
 
 	keyId = common.PackID(key.PublicBox, key.PublicSign)

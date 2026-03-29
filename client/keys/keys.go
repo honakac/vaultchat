@@ -8,12 +8,8 @@ import (
 	"github.com/honakac/vaultchat/common"
 )
 
-const (
-	FILEKEYS string = "user.keys"
-)
-
-func WriteKeys(key *common.Keys) {
-	file, err := os.OpenFile(FILEKEYS, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
+func WriteKeys(filepath string, key *common.Keys) {
+	file, err := os.OpenFile(filepath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
 	if err != nil {
 		panic(err)
 	}
@@ -29,8 +25,8 @@ func WriteKeys(key *common.Keys) {
 	}
 }
 
-func ReadKeys() (key *common.Keys) {
-	file, err := os.OpenFile(FILEKEYS, os.O_RDONLY, 0600)
+func ReadKeys(filepath string) (key *common.Keys) {
+	file, err := os.OpenFile(filepath, os.O_RDONLY, 0600)
 	if errors.Is(err, os.ErrNotExist) {
 		panic("File with keys is not exists!")
 	} else if err != nil {

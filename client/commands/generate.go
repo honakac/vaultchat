@@ -14,7 +14,7 @@ func Generate() (key *common.Keys) {
 
 	if agree == 'y' || agree == 'Y' {
 		key = common.GenerateKeys()
-		keys.WriteKeys(key)
+		keys.WriteKeys("user.keys", key)
 
 		fmt.Println("Successfully!")
 	} else {
