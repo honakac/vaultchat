@@ -1,38 +1,16 @@
-package main
+package keys
 
 import (
-	"crypto/rand"
 	"encoding/gob"
 	"errors"
 	"os"
 
 	"github.com/honakac/vaultchat/common"
-	"golang.org/x/crypto/nacl/box"
-	"golang.org/x/crypto/nacl/sign"
 )
 
 const (
 	FILEKEYS string = "user.keys"
 )
-
-func GenerateKeys() (key *common.Keys) {
-	publicBox, privateBox, err := box.GenerateKey(rand.Reader)
-	if err != nil {
-		panic(err)
-	}
-
-	publicSign, privateSign, err := sign.GenerateKey(rand.Reader)
-	if err != nil {
-		panic(err)
-	}
-
-	return &common.Keys{
-		PublicBox:   publicBox,
-		PrivateBox:  privateBox,
-		PublicSign:  publicSign,
-		PrivateSign: privateSign,
-	}
-}
 
 func WriteKeys(key *common.Keys) {
 	file, err := os.OpenFile(FILEKEYS, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)

@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/honakac/vaultchat/client/commands"
+	"github.com/honakac/vaultchat/client/keys"
 	"github.com/honakac/vaultchat/common"
 )
 
@@ -26,12 +27,12 @@ func main() {
 		fmt.Println("In case of creating new keys, there is a command 'generate'")
 
 		key = common.GenerateKeys()
-		common.WriteKeys(key)
+		keys.WriteKeys(key)
 
 		fmt.Println("Successfully generated!")
 		fmt.Println()
 	} else {
-		key = common.ReadKeys()
+		key = keys.ReadKeys()
 	}
 
 	keyId = common.PackID(key.PublicBox, key.PublicSign)

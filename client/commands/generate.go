@@ -2,6 +2,8 @@ package commands
 
 import (
 	"fmt"
+
+	"github.com/honakac/vaultchat/client/keys"
 	"github.com/honakac/vaultchat/common"
 )
 
@@ -12,7 +14,7 @@ func Generate() (key *common.Keys) {
 
 	if agree == 'y' || agree == 'Y' {
 		key = common.GenerateKeys()
-		common.WriteKeys(key)
+		keys.WriteKeys(key)
 
 		fmt.Println("Successfully!")
 	} else {
