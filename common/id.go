@@ -1,4 +1,4 @@
-package keys
+package common
 
 import (
 	"github.com/btcsuite/btcutil/base58"

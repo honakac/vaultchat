@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/honakac/vaultchat/client/commands"
-	"github.com/honakac/vaultchat/client/keys"
+	"github.com/honakac/vaultchat/common"
 )
 
 func main() {
@@ -18,23 +18,23 @@ func main() {
 	// 	panic("Failed to connect database")
 	// }
 
-	var key *keys.Keys
+	var key *common.Keys
 	var keyId string
 
 	if _, err := os.Stat("user.keys"); errors.Is(err, os.ErrNotExist) {
 		fmt.Println("The key file has not been created, we are generating...")
 		fmt.Println("In case of creating new keys, there is a command 'generate'")
 
-		key = keys.GenerateKeys()
-		keys.WriteKeys(key)
+		key = common.GenerateKeys()
+		common.WriteKeys(key)
 
 		fmt.Println("Successfully generated!")
 		fmt.Println()
 	} else {
-		key = keys.ReadKeys()
+		key = common.ReadKeys()
 	}
 
-	keyId = keys.PackID(key.PublicBox, key.PublicSign)
+	keyId = common.PackID(key.PublicBox, key.PublicSign)
 	fmt.Println("Your id:", keyId)
 
 	for {
@@ -62,7 +62,7 @@ func main() {
 			case "generate":
 				if newKey := commands.Generate(); newKey != nil {
 					key = newKey
-					keyId = keys.PackID(key.PublicBox, key.PublicSign)
+					keyId = common.PackID(key.PublicBox, key.PublicSign)
 					fmt.Println("Your new id:", keyId)
 				}
 

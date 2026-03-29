@@ -1,4 +1,4 @@
-package keys
+package common
 
 import (
 	"errors"

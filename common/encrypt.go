@@ -1,4 +1,4 @@
-package keys
+package common
 
 import (
 	"golang.org/x/crypto/nacl/box"

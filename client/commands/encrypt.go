@@ -3,12 +3,11 @@ package commands
 import (
 	"encoding/base64"
 	"fmt"
-
-	"github.com/honakac/vaultchat/client/keys"
+	"github.com/honakac/vaultchat/common"
 )
 
-func Encrypt(key *keys.Keys, id string, message string) {
-	data, err := keys.EncryptById(key, id, message)
+func Encrypt(key *common.Keys, id string, message string) {
+	data, err := common.EncryptById(key, id, message)
 	if err != nil {
 		panic(err)
 	} else {

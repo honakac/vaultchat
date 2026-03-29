@@ -1,4 +1,4 @@
-package keys
+package main
 
 import (
 	"crypto/rand"
@@ -6,23 +6,16 @@ import (
 	"errors"
 	"os"
 
+	"github.com/honakac/vaultchat/common"
 	"golang.org/x/crypto/nacl/box"
 	"golang.org/x/crypto/nacl/sign"
 )
 
 const (
-	FILEKEYS  string = "user.keys"
-	KEYPREFIX string = "vc1"
+	FILEKEYS string = "user.keys"
 )
 
-type Keys struct {
-	PublicBox   *[32]byte
-	PrivateBox  *[32]byte
-	PublicSign  *[32]byte
-	PrivateSign *[64]byte
-}
-
-func GenerateKeys() (key *Keys) {
+func GenerateKeys() (key *common.Keys) {
 	publicBox, privateBox, err := box.GenerateKey(rand.Reader)
 	if err != nil {
 		panic(err)
@@ -33,7 +26,7 @@ func GenerateKeys() (key *Keys) {
 		panic(err)
 	}
 
-	return &Keys{
+	return &common.Keys{
 		PublicBox:   publicBox,
 		PrivateBox:  privateBox,
 		PublicSign:  publicSign,
@@ -41,7 +34,7 @@ func GenerateKeys() (key *Keys) {
 	}
 }
 
-func WriteKeys(key *Keys) {
+func WriteKeys(key *common.Keys) {
 	file, err := os.OpenFile(FILEKEYS, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0600)
 	if err != nil {
 		panic(err)
@@ -58,7 +51,7 @@ func WriteKeys(key *Keys) {
 	}
 }
 
-func ReadKeys() (key *Keys) {
+func ReadKeys() (key *common.Keys) {
 	file, err := os.OpenFile(FILEKEYS, os.O_RDONLY, 0600)
 	if errors.Is(err, os.ErrNotExist) {
 		panic("File with keys is not exists!")
@@ -67,7 +60,7 @@ func ReadKeys() (key *Keys) {
 	}
 	defer file.Close()
 
-	key = new(Keys)
+	key = new(common.Keys)
 	decoder := gob.NewDecoder(file)
 	if err := decoder.Decode(key); err != nil {
 		panic(err)
