@@ -18,6 +18,7 @@ func (db *Database) AddInboxMessage(c fiber.Ctx, req SendMessageRequest) error {
 	if err := db.db.Create(&InboxMessage{
 		Cuid:         req.Cuid,
 		ReceiverAddr: req.ReceiverAddr,
+		SenderAddr:   req.SenderAddr,
 		Payload:      req.Payload,
 	}).Error; err != nil {
 		log.Errorf("Failed to add inbox message: %v", err)
