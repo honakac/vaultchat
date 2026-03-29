@@ -10,13 +10,13 @@ import (
 func Decrypt(key *common.Keys, id string, messageBase64 string) {
 	message, err := base64.StdEncoding.DecodeString(messageBase64)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	data, err := common.DecryptById(key, id, message)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	} else {
-		fmt.Println(string(data))
+		fmt.Println("Message: " + string(data))
 	}
 }
