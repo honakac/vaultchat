@@ -10,7 +10,7 @@ import (
 type InboxMessage struct {
 	Cuid         string `gorm:"primaryKey"`
 	ReceiverAddr string `gorm:"index"`
-	Payload      string
+	Payload      []byte
 	CreatedAt    time.Time
 }
 

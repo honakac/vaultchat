@@ -8,7 +8,7 @@ import (
 type SendMessageRequest struct {
 	Cuid         string `json:"cuid"`
 	ReceiverAddr string `json:"receiver_addr"`
-	Payload      string `json:"payload"`
+	Payload      []byte `json:"payload"`
 }
 
 func (db *Database) AddInboxMessage(c fiber.Ctx, req SendMessageRequest) error {
