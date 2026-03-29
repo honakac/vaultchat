@@ -1,8 +1,11 @@
 package database
 
 import (
+	"encoding/json"
+
 	"github.com/charmbracelet/log"
 	"github.com/gofiber/fiber/v3"
+	"github.com/honakac/vaultchat/common"
 )
 
 type SendMessageRequest struct {
@@ -10,6 +13,10 @@ type SendMessageRequest struct {
 	ReceiverAddr string `json:"receiver_addr"`
 	SenderAddr   string `json:"sender_addr"`
 	Payload      []byte `json:"payload"`
+}
+
+type GetMessagesResponse struct {
+	Messages []InboxMessage `json:"messages"`
 }
 
 func (db *Database) AddInboxMessage(c fiber.Ctx, req SendMessageRequest) error {
@@ -30,14 +37,24 @@ func (db *Database) AddInboxMessage(c fiber.Ctx, req SendMessageRequest) error {
 	})
 }
 
-func (db *Database) GetInboxMessages(c fiber.Ctx, receiverAddr string, lastCuid string) error {
+func (db *Database) GetInboxMessages(key *common.Keys, c fiber.Ctx, receiverAddr string, lastCuid string) error {
 	var messages []InboxMessage
 	if err := db.db.Where("receiver_addr = ? AND cuid > ?", receiverAddr, lastCuid).Find(&messages).Error; err != nil {
 		log.Errorf("Failed to get inbox messages: %v", err)
 		return err
 	}
 
-	return c.JSON(fiber.Map{
-		"messages": messages,
-	})
+	jsonMessages, err := json.Marshal(messages)
+	if err != nil {
+		log.Errorf("Failed to marshal messages: %v", err)
+		return err
+	}
+
+	encrypted, err := common.EncryptById(key, receiverAddr, string(jsonMessages))
+	if err != nil {
+		log.Errorf("Failed to encrypt messages: %v", err)
+		return err
+	}
+
+	return c.Send(encrypted)
 }
