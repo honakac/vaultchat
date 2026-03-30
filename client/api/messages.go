@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"time"
 
 	"github.com/honakac/vaultchat/common"
 	"github.com/honakac/vaultchat/relay/database"
@@ -14,8 +15,10 @@ type GetMessageResponse struct {
 }
 
 type InboxDecryptedMessage struct {
+	Cuid       string
 	SenderAddr string
 	Message    string
+	Timesteamp time.Time
 }
 
 func Messages(key *common.Keys, keyId string, url string, lastCuid string) ([]InboxDecryptedMessage, error) {
@@ -53,8 +56,10 @@ func Messages(key *common.Keys, keyId string, url string, lastCuid string) ([]In
 		}
 
 		inboxDecryptedMessages = append(inboxDecryptedMessages, InboxDecryptedMessage{
+			Cuid:       msg.Cuid,
 			SenderAddr: msg.SenderAddr,
 			Message:    string(decrypted),
+			Timesteamp: msg.CreatedAt,
 		})
 	}
 

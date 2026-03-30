@@ -15,6 +15,6 @@ func Messages(key *common.Keys, keyId string, url string) {
 	}
 
 	for _, msg := range messages {
-		fmt.Printf("Message from %s: %s\n", msg.SenderAddr, msg.Message)
+		fmt.Printf("Message from %s: %s at %s (%s)\n", msg.SenderAddr, msg.Message, msg.Timesteamp.Format("02.01.2006 15:04:05.000"), msg.Cuid)
 	}
 }
