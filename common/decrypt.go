@@ -25,6 +25,11 @@ func DecryptByPublicKey(key *Keys, packet []byte, senderPublicBox *[32]byte, sen
 		return nil, errors.New("invalid signature (message is not from the claimed sender)")
 	}
 
+	msg, err := Unpadding(msg)
+	if err != nil {
+		return nil, errors.New("failed to unpad message")
+	}
+
 	return msg, nil
 }
 
