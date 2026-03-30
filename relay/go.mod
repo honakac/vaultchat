@@ -4,7 +4,7 @@ go 1.26.1
 
 require (
 	github.com/charmbracelet/log v1.0.0
-	github.com/honakac/vaultchat/common v0.0.0-20260329181811-cd4f580fc062
+	github.com/honakac/vaultchat/common v0.0.0-20260330122745-73404554d8b3
 	gorm.io/driver/sqlite v1.6.0
 )
 
@@ -22,7 +22,7 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/lucasb-eyer/go-colorful v1.4.0 // indirect
 	github.com/mattn/go-runewidth v0.0.21 // indirect
-	github.com/mattn/go-sqlite3 v1.14.37 // indirect
+	github.com/mattn/go-sqlite3 v1.14.38 // indirect
 	github.com/muesli/termenv v0.16.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
@@ -36,7 +36,7 @@ require (
 	github.com/gofiber/schema v1.7.0 // indirect
 	github.com/gofiber/utils/v2 v2.0.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/honakac/vaultchat/client v0.0.0-20260329181811-cd4f580fc062
+	github.com/honakac/vaultchat/client v0.0.0-20260330122745-73404554d8b3
 	github.com/klauspost/compress v1.18.5 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

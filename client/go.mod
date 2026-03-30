@@ -3,7 +3,7 @@ module github.com/honakac/vaultchat/client
 go 1.26.1
 
 require (
-	github.com/honakac/vaultchat/common v0.0.0-20260330064014-bcce9c34cfd8
+	github.com/honakac/vaultchat/common v0.0.0-20260330122745-73404554d8b3
 	github.com/nrednav/cuid2 v1.1.0
 )
 
@@ -47,7 +47,7 @@ require (
 
 require (
 	github.com/btcsuite/btcutil v1.0.2 // indirect
-	github.com/honakac/vaultchat/relay v0.0.0-20260330064014-bcce9c34cfd8
+	github.com/honakac/vaultchat/relay v0.0.0-20260330122745-73404554d8b3
 	golang.org/x/crypto v0.49.0 // indirect
 	golang.org/x/sys v0.42.0 // indirect
 )

@@ -54,12 +54,16 @@ github.com/honakac/vaultchat/common v0.0.0-20260329181811-cd4f580fc062 h1:Rp5x5v
 github.com/honakac/vaultchat/common v0.0.0-20260329181811-cd4f580fc062/go.mod h1:S0R44gCJ99jcRHfz9jVD4uwpaPAZhorgHP/ojXG6MT8=
 github.com/honakac/vaultchat/common v0.0.0-20260330064014-bcce9c34cfd8 h1:7/BO7pmkmW0VTQ+vVDex6vVh52cP9MBFQe+L46FYGxY=
 github.com/honakac/vaultchat/common v0.0.0-20260330064014-bcce9c34cfd8/go.mod h1:S0R44gCJ99jcRHfz9jVD4uwpaPAZhorgHP/ojXG6MT8=
+github.com/honakac/vaultchat/common v0.0.0-20260330122745-73404554d8b3 h1:/k2DWjcl+w//4aQvFqyZNS2vLdzG8vE7m331ArysDRU=
+github.com/honakac/vaultchat/common v0.0.0-20260330122745-73404554d8b3/go.mod h1:S0R44gCJ99jcRHfz9jVD4uwpaPAZhorgHP/ojXG6MT8=
 github.com/honakac/vaultchat/relay v0.0.0-20260329180823-93407a012dd5 h1:oughOFYNiF+LU2D+o0ozy1oCecDnUgBNZxwCGj5PPS0=
 github.com/honakac/vaultchat/relay v0.0.0-20260329180823-93407a012dd5/go.mod h1:Dt8eRhtXE8xrZTHvv5S5riqyD9QB47P67gtbyHtHUIk=
 github.com/honakac/vaultchat/relay v0.0.0-20260329181811-cd4f580fc062 h1:CL6nWpeT5ZNYzh3aOl1Q5d+107rbyX/40P8SA+AffXU=
 github.com/honakac/vaultchat/relay v0.0.0-20260329181811-cd4f580fc062/go.mod h1:Dt8eRhtXE8xrZTHvv5S5riqyD9QB47P67gtbyHtHUIk=
 github.com/honakac/vaultchat/relay v0.0.0-20260330064014-bcce9c34cfd8 h1:Cy80YgbFzI3vCu5H5RiXXcXb1fQRRy8JfTn5XMzGZWo=
 github.com/honakac/vaultchat/relay v0.0.0-20260330064014-bcce9c34cfd8/go.mod h1:OZFHyBI0EBIdVOm7KYcxL1CuH+qnUUOPKXsqAoVfUGU=
+github.com/honakac/vaultchat/relay v0.0.0-20260330122745-73404554d8b3 h1:Jpz+XRGiQQVIW3aHPVS456ml4xfPeQgFDZujBw8/6sg=
+github.com/honakac/vaultchat/relay v0.0.0-20260330122745-73404554d8b3/go.mod h1:OZFHyBI0EBIdVOm7KYcxL1CuH+qnUUOPKXsqAoVfUGU=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
 github.com/jessevdk/go-flags v0.0.0-20141203071132-1679536dcc89/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=

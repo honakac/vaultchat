@@ -52,10 +52,14 @@ github.com/honakac/vaultchat/client v0.0.0-20260329180823-93407a012dd5 h1:Rihmuc
 github.com/honakac/vaultchat/client v0.0.0-20260329180823-93407a012dd5/go.mod h1:dXXB9OwOgNyAQxsKBOCiwmHyb2xd/BKBrHqaK8AzHxo=
 github.com/honakac/vaultchat/client v0.0.0-20260329181811-cd4f580fc062 h1:lSDEEVuQ5XXTGy3UR1DccpB0dxc1DMItPKdS0KsdISI=
 github.com/honakac/vaultchat/client v0.0.0-20260329181811-cd4f580fc062/go.mod h1:dXXB9OwOgNyAQxsKBOCiwmHyb2xd/BKBrHqaK8AzHxo=
+github.com/honakac/vaultchat/client v0.0.0-20260330122745-73404554d8b3 h1:mJvRR/hd0A5ZYUw5FKZL8m8rHV23M2+0LCAk1PLpDPg=
+github.com/honakac/vaultchat/client v0.0.0-20260330122745-73404554d8b3/go.mod h1:TAsK2zV8bqd6oSF0k60ZCNjUyVW+ZxiTrEpkVcaJL7s=
 github.com/honakac/vaultchat/common v0.0.0-20260329180823-93407a012dd5 h1:Nq7HrDvxb2qIglIt8lPMXUIjEj61W47tQnh0baNf62k=
 github.com/honakac/vaultchat/common v0.0.0-20260329180823-93407a012dd5/go.mod h1:S0R44gCJ99jcRHfz9jVD4uwpaPAZhorgHP/ojXG6MT8=
 github.com/honakac/vaultchat/common v0.0.0-20260329181811-cd4f580fc062 h1:Rp5x5vYzG1Ng3PV5B8m0eGqwiGfr5n3UL6cY71baVSo=
 github.com/honakac/vaultchat/common v0.0.0-20260329181811-cd4f580fc062/go.mod h1:S0R44gCJ99jcRHfz9jVD4uwpaPAZhorgHP/ojXG6MT8=
+github.com/honakac/vaultchat/common v0.0.0-20260330122745-73404554d8b3 h1:/k2DWjcl+w//4aQvFqyZNS2vLdzG8vE7m331ArysDRU=
+github.com/honakac/vaultchat/common v0.0.0-20260330122745-73404554d8b3/go.mod h1:S0R44gCJ99jcRHfz9jVD4uwpaPAZhorgHP/ojXG6MT8=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
 github.com/jessevdk/go-flags v0.0.0-20141203071132-1679536dcc89/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
@@ -76,6 +80,8 @@ github.com/mattn/go-runewidth v0.0.21 h1:jJKAZiQH+2mIinzCJIaIG9Be1+0NR+5sz/lYEEj
 github.com/mattn/go-runewidth v0.0.21/go.mod h1:XBkDxAl56ILZc9knddidhrOlY5R/pDhgLpndooCuJAs=
 github.com/mattn/go-sqlite3 v1.14.37 h1:3DOZp4cXis1cUIpCfXLtmlGolNLp2VEqhiB/PARNBIg=
 github.com/mattn/go-sqlite3 v1.14.37/go.mod h1:Uh1q+B4BYcTPb+yiD3kU8Ct7aC0hY9fxUwlHK0RXw+Y=
+github.com/mattn/go-sqlite3 v1.14.38 h1:tDUzL85kMvOrvpCt8P64SbGgVFtJB11GPi2AdmITgb4=
+github.com/mattn/go-sqlite3 v1.14.38/go.mod h1:Uh1q+B4BYcTPb+yiD3kU8Ct7aC0hY9fxUwlHK0RXw+Y=
 github.com/muesli/termenv v0.16.0 h1:S5AlUN9dENB57rsbnkPyfdGuWIlkmzJjbFf0Tf5FWUc=
 github.com/muesli/termenv v0.16.0/go.mod h1:ZRfOIKPFDYQoDFF4Olj7/QJbW60Ol/kL1pU3VfY/Cnk=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
