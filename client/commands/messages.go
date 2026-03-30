@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/honakac/vaultchat/client/utils"
+	"github.com/honakac/vaultchat/client/api"
 	"github.com/honakac/vaultchat/common"
 	"github.com/honakac/vaultchat/relay/database"
 )
@@ -16,7 +16,7 @@ type GetMessageResponse struct {
 }
 
 func Messages(key *common.Keys, keyId string, url string) {
-	relayId, err := utils.GetInfo(url)
+	relayId, err := api.GetInfo(url)
 	if err != nil {
 		fmt.Printf("Failed to get relay info: %s\n", err)
 		return

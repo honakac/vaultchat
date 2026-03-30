@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/honakac/vaultchat/client/utils"
+	"github.com/honakac/vaultchat/client/api"
 	"github.com/honakac/vaultchat/common"
 	"github.com/honakac/vaultchat/relay/database"
 	"github.com/nrednav/cuid2"
@@ -15,7 +15,7 @@ import (
 func Send(key *common.Keys, keyId string, url string, id string, message string) {
 	fmt.Println("Getting relay keys...")
 
-	relayId, err := utils.GetInfo(url)
+	relayId, err := api.GetInfo(url)
 	if err != nil {
 		fmt.Printf("Failed to get relay info: %s\n", err)
 		return
