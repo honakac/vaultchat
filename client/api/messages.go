@@ -18,7 +18,7 @@ type InboxDecryptedMessage struct {
 	Message    string
 }
 
-func Messages(key *common.Keys, keyId string, url string) ([]InboxDecryptedMessage, error) {
+func Messages(key *common.Keys, keyId string, url string, lastCuid string) ([]InboxDecryptedMessage, error) {
 	var inboxDecryptedMessages []InboxDecryptedMessage
 
 	relayId, err := GetInfo(url)
@@ -26,7 +26,7 @@ func Messages(key *common.Keys, keyId string, url string) ([]InboxDecryptedMessa
 		return nil, err
 	}
 
-	relayResponse, err := http.Get(url + "/v1/fetch_messages/" + keyId + "/0")
+	relayResponse, err := http.Get(url + "/v1/fetch_messages/" + keyId + "/" + lastCuid)
 	if err != nil {
 		return nil, err
 	}

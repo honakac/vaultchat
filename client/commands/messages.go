@@ -8,7 +8,7 @@ import (
 )
 
 func Messages(key *common.Keys, keyId string, url string) {
-	messages, err := api.Messages(key, keyId, url)
+	messages, err := api.Messages(key, keyId, url, "0")
 	if err != nil {
 		fmt.Printf("Failed to get messages: %s\n", err)
 		return
